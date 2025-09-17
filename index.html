@@ -11,13 +11,16 @@
 <body>
 
     <header class="quizHeader">
-      <div><i class="fa-solid fa-stopwatch" style="font-size: 1.5rem;"></i>&nbsp;<span id="delai">00 : 30</span></div>
+      <div><i class="fa-solid fa-stopwatch" style="font-size: 1.5rem;"></i>&nbsp;<span id="delai"></span></div>
       <div><span id="QuestionNbr"></span></div>
       <div>score : <span id="score"> 0 </span> points</div>  
     </header>
 
     <main class="quizContainer">   
-        <div class="quizBox"> 
+        <div class="quizBox">
+
+           <div id="timerBox"> <span id="timer">5</span> </div>  
+
             <div><h1  id="quizTitle"> </h1></div>
              <!-- ----------------------------- -->
             <div class="optionsBox" id="options">
@@ -27,9 +30,24 @@
               <button class="op"></button>
             </div>
 
-              <button class="quizBtn">Passer</button>
+              <button class="quizBtn" onclick="next()">Passer</button>
         </div>
+
+        <div class="endQuizBoxModul">
+           <h2>Résultats du Quiz</h2>
+           <p>Score final : <span id="resultScore"></span></p>
+           <p>Réponses correctes : <span id="correctResponce">0</span></p>
+           <p>Réponses incorrectes : <span id="incorrectResponce">0</span></p>
+
+           <div class="button">
+             <button onclick="restartQuiz()">Recommencer</button>
+             <button onclick="backHome()">Retour à l'accueil</button>
+           </div>
+         </div>
+         
     </main>
+
+             
    <script src="data.js"></script>
    <script src="index.js"></script>
 </body>

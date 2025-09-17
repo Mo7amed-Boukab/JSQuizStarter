@@ -84,3 +84,63 @@
     background-color: var(--main-color);
     cursor: pointer;
 }
+
+.endQuizBoxModul{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 2.5em;
+}
+
+.endQuizBoxModul h2{
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    color: #1b263b;
+}
+.endQuizBoxModul p{
+    font-size: 1.3em;
+    margin-bottom: 0.8em;
+    color: #1b263b;
+}
+.endQuizBoxModul p span{
+    color: #777;
+    font-size: 1em;
+}
+.endQuizBoxModul .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.endQuizBoxModul .button button{
+    padding: 0.6em 1.8em;
+    margin-top: 10px;
+    background-color: var(--seconde-color);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: all 0.5s ease;
+}
+.endQuizBoxModul button:hover{
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+#timerBox{
+  height: 30px;
+  text-align: center;
+  color: #1b263b;
+}
+#timer{
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
