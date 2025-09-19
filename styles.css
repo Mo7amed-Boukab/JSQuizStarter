@@ -447,6 +447,13 @@ header{
     font-weight: bold;
 }
 
+.report-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+}
+
 .quizReportBoxModul .button button {
     padding: 0.6em 1.8em;
     background-color: var(--seconde-color);
@@ -462,4 +469,11 @@ header{
     cursor: pointer;
 }
 
+#quizReportBox {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
 

@@ -170,6 +170,35 @@ function showReport() {
   displayReport(userAnswers); 
 }
 
+async function telechargerPDF() {
+  const element = document.getElementById("quizReportBox");
+  const btn = document.querySelector(".report-actions");
+  btn.style.display = "none";
+
+  const opt = {
+    margin:       [0.5, 0.5, 0.5, 0.5], 
+    filename:     'rapport_quiz.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { 
+      scale: 2, 
+      useCORS: true, 
+      scrollY: 0     
+    },
+    jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' },
+    pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+  };
+try {
+    await html2pdf().set(opt).from(element).save();
+} catch (error) {
+    console.error("Erreur lors du téléchargement du PDF:", error);
+} finally {
+    btn.style.display = "flex";
+}
+  
+ 
+ 
+}
+
 
 function restartQuiz() {
   window.location.reload();
