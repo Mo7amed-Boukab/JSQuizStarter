@@ -1,0 +1,59 @@
+{
+  "easy": [
+    {
+      "question": "Que signifie HTML ?",
+      "options": [
+        "HyperText Markup Language",
+        "HighText Machine Language",
+        "Hyperlink and Text Markup Language",
+        "Home Tool Markup Language"
+      ],
+      "correct": [0]
+    },
+    {
+      "question": "Quelles balises sont utilisées pour créer une liste ?",
+      "options": ["<ul>", "<ol>", "<li>", "<p>"],
+      "correct": [0, 1, 2]
+    },
+    {
+      "question": "Quelle balise est utilisée pour insérer une image ?",
+      "options": ["<div>", "<image>", "<img>", "<src>"],
+      "correct": [2]
+    },
+    {
+      "question": "Quelle balise est utilisée pour créer un lien hypertexte ?",
+      "options": ["<a>", "<link>", "<href>", "<url>"],
+      "correct": [0]
+    },
+    {
+      "question": "Quelle est la bonne balise pour le plus grand titre ?",
+      "options": ["<heading>", "<h6>", "<h1>", "<head>"],
+      "correct": [2]
+    },
+    {
+      "question": "Quels attributs sont valides dans une image ?",
+      "options": ["src", "alt", "title", "href"],
+      "correct": [0, 1, 2]
+    },
+    {
+      "question": "Quelle balise insère une ligne horizontale ?",
+      "options": ["<br>", "<hr>", "<line>", "<hl>"],
+      "correct": [1]
+    },
+    {
+      "question": "Quel attribut ouvre un lien dans un nouvel onglet ?",
+      "options": ["target='_blank'", "href='_blank'", "newTab", "open"],
+      "correct": [0]
+    },
+    {
+      "question": "Quelle balise est utilisée pour un tableau ?",
+      "options": ["<tr>", "<table>", "<td>", "<tab>"],
+      "correct": [1]
+    },
+    {
+      "question": "Quelles balises sont utilisées dans un tableau ?",
+      "options": ["<tr>", "<td>", "<th>", "<row>"],
+      "correct": [0, 1, 2]
+    }
+  ]
+}
