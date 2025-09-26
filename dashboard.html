@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Dashboard - JSQuiz Advanced</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container-nav">
+            <div class="logo" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                JS<span>Quiz</span> Dashboard
+            </div>
+            <button class="navbar-button" onclick="window.location.href='index.html'">
+                <i class="fas fa-home"></i> Accueil
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+        <!-- Statistics Cards -->
+        <section class="stats-overview">
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-primary">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="totalGames">0</h3>
+                    <p>Total Jeu</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-success">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="bestScore">0</h3>
+                    <p>Meilleur Score</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-info">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="avgScore">0</h3>
+                    <p>Score Moyen</p>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon stat-icon-secondary">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 id="successRate"></h3>
+                    <p>Taux de Réussite</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="chart-container">
+                <div class="chart-box">
+                    <h3>Répartition par Thématique</h3>
+                    <canvas id="distributionThemeChart" width="400" height="400"></canvas>
+                </div>
+                
+                <div class="chart-box">
+                    <h3>Progression des Scores</h3>
+                    <canvas id="scorePerThemeChart" width="600" height="300"></canvas>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Players -->
+        <section class="leaderboard-section">
+            <div class="leaderboard-box">
+                <h3><i class="fas fa-crown"></i> Top 3 Joueurs</h3>
+                <div class="leaderboard-list" id="leaderboard">
+  
+                </div>
+            </div>
+        </section>
+
+        <!-- Game History -->
+        <section class="history-section">
+            <div class="history-box">
+                <div class="history-header">
+                    <h3><i class="fas fa-list"></i> Historique des Parties</h3>
+                    <div class="history-filters">
+                        <select id="themeFilter">
+                            <option value="">Toutes les thématiques</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="js">JavaScript</option>
+                        </select>
+                        <button class="clear-history-btn" id="clear-history">
+                            <i class="fas fa-trash"></i> Vider l'historique
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="history-table-container">
+                    <table class="history-table" id="historyTable">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Joueur</th>
+                                <th>Thématique</th>
+                                <th>Score</th>
+                                <th>Difficulté</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyBody">
+  
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Confirmation -->
+        <div id="confirmModal" class="modal">
+          <div class="modal-content">
+            <h3>Confirmation</h3>
+            <p>Voulez-vous vraiment <strong>vider tout l'historique</strong> ?</p>
+            <div class="modal-actions">
+              <button id="confirmClear" class="btn-confirm">Oui, vider</button>
+              <button id="cancelClear" class="btn-cancel">Annuler</button>
+            </div>
+          </div>
+        </div>
+        
+    </main>
+
+    <!-- JS -->
+    <script type="module" src="Js/dashboard.js"></script>
+    <script type="module" src="Js/stats.js"></script>
+    <script type="module" src="Js/topPlayers.js"></script>
+    <script type="module" src="Js/history.js"></script>
+    <script type="module" src="Js/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

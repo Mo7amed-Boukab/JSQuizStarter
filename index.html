@@ -15,7 +15,7 @@
     <header>
       <div class="container-nav">
         <div class="logo">Js<span> Quiz </span> Starter</div>
-        <button class="navbar-button">Dashboard</button>
+        <button class="navbar-button" onclick="window.location.href='dashboard.html'">Dashboard</button>
       </div>
     </header>
 
@@ -99,7 +99,7 @@
         }
 
         localStorage.setItem("quizUserName", userName);
-        localStorage.setItem("theme", selectedTheme);
+        localStorage.setItem("selectedTheme", selectedTheme);
         localStorage.setItem("selectedLevel", selectedLevel);
 
         window.location.href = "quiz.html";
