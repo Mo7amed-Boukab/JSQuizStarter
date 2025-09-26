@@ -1,0 +1,19 @@
+{
+  "name": "jsquizstarter",
+  "version": "1.0.0",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mo7amed-Boukab/JSQuizStarter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mo7amed-Boukab/JSQuizStarter/issues"
+  },
+  "homepage": "https://github.com/Mo7amed-Boukab/JSQuizStarter#readme",
+  "description": ""
+}
