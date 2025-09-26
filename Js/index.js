@@ -17,7 +17,7 @@ endQuiz.style.display = "none";
 
 // --------------------- Récupération des données stockées dans localStorage ---------------------
 let quizData = JSON.parse(localStorage.getItem("quizData")); 
-let selectedTheme = localStorage.getItem("theme"); 
+let selectedTheme = localStorage.getItem("selectedTheme"); 
 let selectedLevel = localStorage.getItem("selectedLevel");
 
 // --------------------- Fonction pour charger toutes les données du quiz ---------------------
@@ -139,15 +139,20 @@ function afficherResultat() {
 
   const result = {
     user: userName,
+    theme : selectedTheme,
     level: selectedLevel,
     score: scoreValue,
     correct: correctResponceCount,
     incorrect: incorrectResponceCount,
     date: new Date().toLocaleString(),
+    answers: userAnswers,
   };
 
   history.push(result);
   localStorage.setItem("quizHistory", JSON.stringify(history));
+  localStorage.removeItem('quizUserName');
+  localStorage.removeItem('selectedLevel');
+  localStorage.removeItem('selectedTheme');
 }
 
 // --------------------- Fonction pour afficher le rapport ---------------------
