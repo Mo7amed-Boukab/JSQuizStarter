@@ -137,3 +137,78 @@ function isAnswerCorrect(ans) {
 document.getElementById("backDashboard").addEventListener("click", function () {
   window.location.href = "dashboard.html";
 });
+
+// ------------------------- Download JSON -------------------------
+function downloadJSON(data, fileName = 'quiz_report.json') {
+  const jsonStr = JSON.stringify(data, null, 2); 
+  const blob = new Blob([jsonStr], { type: "application/json" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = fileName;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function exportJSON() {
+  if (!attempt) return;
+  downloadJSON(attempt, `rapport_quiz_${idx}.json`);
+}
+
+// ------------------------- Download CSV -------------------------
+function csvEscape(text) {
+  return `"${String(text || '').replace(/"/g, '""')}"`; // Échapper les guillemets
+}
+
+function downloadCSV(data, fileName = 'quiz_report.csv') {
+  if (!data || !data.answers) return;
+
+  const lines = [];
+  // Métadonnées
+  lines.push(['User', data.user].join(';'));
+  lines.push(['Theme', data.theme].join(';'));
+  lines.push(['Level', data.level].join(';'));
+  lines.push(['Date', data.date].join(';'));
+  lines.push(['Score', data.score].join(';'));
+  lines.push(['Correct', data.correct].join(';'));
+  lines.push(['Incorrect', data.incorrect].join(';'));
+  lines.push(''); 
+
+  // En-tête des questions
+  lines.push(['QIndex','Result','Question','OptionIndex','OptionText','IsCorrect','UserSelected'].join(';'));
+
+  // Boucle sur les questions
+  data.answers.forEach((ans, qIndex) => {
+    const result = isAnswerCorrect(ans) ? 'Correct' : 'Incorrect';
+    ans.options.forEach((opt, oIndex) => {
+      const isRight = ans.correct.includes(oIndex) ? 1 : 0;
+      const chosen = ans.selected.includes(oIndex) ? 1 : 0;
+      lines.push([
+        qIndex + 1,
+        result,
+        csvEscape(ans.question),
+        oIndex + 1,
+        csvEscape(opt),
+        isRight,
+        chosen
+      ].join(';'));
+    });
+  });
+
+  const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = fileName;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function exportCSV() {
+  if (!attempt) return;
+  downloadCSV(attempt, `rapport_quiz_${idx}.csv`);
+}
+
+// ------------------------- Listeners -------------------------
+const btnJson = document.getElementById("exportJson");
+const btnCsv = document.getElementById("exportCsv");
+if (btnJson) btnJson.addEventListener("click", exportJSON);
+if (btnCsv) btnCsv.addEventListener("click", exportCSV);
