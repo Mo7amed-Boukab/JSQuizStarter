@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rapport Détail - JSQuiz</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="container-nav">
+      <div class="logo" style="cursor:pointer" onclick="window.location.href='index.html'">Js<span> Quiz </span> Starter</div>
+      <button class="navbar-button" onclick="window.location.href='dashboard.html'">Dashboard</button>
+    </div>
+  </header>
+  <main class="report-main">
+    <section class="report-head-section">
+      <h2 class="report-title"><i class="fas fa-file-alt"></i> Rapport Détail du Quiz</h2>
+      <div class="report-meta" id="reportMeta"></div>
+      <div class="report-summary-cards" id="scoreSummary"></div>
+      <div class="report-actions-bar">
+        <button id="backDashboard" class="clear-history-btn" style="background:#dc3545"><i class="fas fa-arrow-left"></i> Retour Dashboard</button>
+      </div>
+    </section>
+    <section class="questions-section" id="questionsContainer"></section>
+  </main>
+  <script type="module" src="Js/report.js"></script>
+</body>
+</html>
